@@ -1,3 +1,3 @@
 # Agilex 5
 
-Development kits etc
+[AXE5 Eagle Development Platform](https://github.com/ArrowElectronics/Agilex-5/wiki/Agilex-5-E-Series-AXE5-Eagle-Development-Platform)
