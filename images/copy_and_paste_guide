@@ -1,0 +1,220 @@
+This text file is provided as a convenience for lab users as they read through the Lab Guide in the partition on the right. Please cut and paste the instructions listed in each section using the Ctrl+C and Ctrl+V hot key as you read through the corresponding sections in the Lab Guide.
+
+The latest version of this file is available for download from https://github.com/ArrowElectronics/Agilex-5/wiki/Workshops
+
+
+Section 5.3 Setup the build environment
+---------------------------------------
+
+cd agilex_5
+
+export TOP_FOLDER=`pwd`
+
+Section 5.4 Arm Trusted Firmware (BL31)
+---------------------------------------
+
+git clone -b QPDS24.1_REL_AGILEX5_GSRD_PR https://github.com/ArrowElectronics/arm-trusted-firmware arm-trusted-firmware
+
+cd arm-trusted-firmware
+
+make -j 48 PLAT=agilex5 bl31
+
+
+Section 5.5.3 Compile U-boot
+----------------------------
+
+cd $TOP_FOLDER
+
+git clone -b QPDS24.1_REL_AGILEX5_GSRD_PR https://github.com/ArrowElectronics/u-boot-socfpga u-boot-socfpga
+
+cd u-boot-socfpga
+
+make mrproper
+
+make socfpga_agilex5_axe5_eagle_defconfig
+
+ln -s ../arm-trusted-firmware/build/agilex5/release/bl31.bin
+
+wget https://raw.githubusercontent.com/altera-opensource/meta-intel-fpga-refdes/QPDS24.1_REL_AGILEX5_GSRD_PR/recipes-bsp/u-boot/files/v1-0001-HSD-15015933655-ddr-altera-agilex5-Hack-dual-port-DO-NOT-MERGE.patch
+
+patch -p1 < v1-0001-HSD-15015933655-ddr-altera-agilex5-Hack-dual-port-DO-NOT-MERGE.patch
+
+make -j 48
+
+aarch64-none-linux-gnu-objcopy -I binary -O ihex --change-addresses 0x0 spl/u-boot-spl-dtb.bin spl/u-boot-spl.ihex
+
+
+Section 5.5.4 Create the U-boot boot script
+-------------------------------------------
+
+cd $TOP_FOLDER
+
+mkdir uboot-script && cd uboot-script
+
+wget https://raw.githubusercontent.com/ArrowElectronics/refdes-agilex5/QPDS24.1_REL_AGILEX5_GSRD_PR/scripts/uboot.txt
+
+wget https://raw.githubusercontent.com/ArrowElectronics/refdes-agilex5/QPDS24.1_REL_AGILEX5_GSRD_PR/scripts/uboot_script.its
+
+mkimage -f uboot_script.its boot.scr.uimg
+
+
+Section 5.6.3 Compile Linux
+---------------------------
+
+cd $TOP_FOLDER
+
+git clone -b QPDS24.1_REL_AGILEX5_GSRD_PR https://github.com/ArrowElectronics/linux-socfpga linux-socfpga
+
+cd linux-socfpga
+
+make socfpga_agilex5_axe5_eagle_defconfig
+
+make -j 48 Image && make arrow/socfpga_agilex5_axe5_eagle.dtb
+
+
+Section 5.6.4 Build kernel.itb
+------------------------------
+
+cd $TOP_FOLDER
+
+mkdir kernel_itb && cd kernel_itb
+ 
+wget https://raw.githubusercontent.com/ArrowElectronics/refdes-agilex5/QPDS24.1_REL_AGILEX5_GSRD_PR/scripts/fit_kernel_agilex5.its
+
+cp $TOP_FOLDER/linux-socfpga/arch/arm64/boot/dts/arrow/socfpga_agilex5_axe5_eagle.dtb socfpga_agilex5_axe5_eagle.dtb
+
+cp $TOP_FOLDER/linux-socfpga/arch/arm64/boot/Image Image
+
+lzma Image
+
+mkimage -f fit_kernel_agilex5.its kernel.itb
+
+
+Section 5.8 Create the SD Card Image
+------------------------------------
+
+cd $TOP_FOLDER
+
+mkdir sd_card && cd sd_card
+
+wget https://releases.rocketboards.org/release/2020.11/gsrd/tools/make_sdimage_p3.py
+
+sed -i 's/\\"\-F 32\",//g' make_sdimage_p3.py
+
+chmod +x make_sdimage_p3.py
+
+mkdir fatfs && cd fatfs
+
+cp $TOP_FOLDER/u-boot-socfpga/u-boot.itb .
+
+cp $TOP_FOLDER/kernel_itb/kernel.itb .
+
+cp $TOP_FOLDER/uboot-script/boot.scr.uimg .
+
+cd ..
+
+mkdir rootfs && cd rootfs
+
+sudo tar xf $TOP_FOLDER/yocto/build/tmp/deploy/images/agilex5/core-image-minimal-agilex5.rootfs.tar.gz
+
+cd ..
+
+sudo python3 make_sdimage_p3.py -f -P fatfs/*,num=1,format=fat32,size=512M -P rootfs/*,num=2,format=ext3,size=512M -s 1024M -n sdcard.img
+
+cd ..
+
+
+Section 5.9 Create the FPGA Configuration Bitstream Image
+---------------------------------------------------------
+
+cd $TOP_FOLDER/ghrd-socfpga/axe5_eagle_ghrd/output_files/
+
+quartus_pfg -c axe5_eagle_top.sof axe5_eagle_top_hps.jic -o device=MT25QU02G -o flash_loader=A5ED065BB32AE5SR0 -o hps_path=$TOP_FOLDER/u-boot-socfpga/spl/u-boot-spl.ihex -o mode=ASX4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
