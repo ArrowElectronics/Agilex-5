@@ -99,7 +99,7 @@ mkdir sd_card && cd sd_card
 
 wget https://releases.rocketboards.org/release/2020.11/gsrd/tools/make_sdimage_p3.py
 
-sed -i 's/\\"\-F 32\",//g' make_sdimage_p3.py
+sed -i 's/\"\-F 32\",//g' make_sdimage_p3.py
 
 chmod +x make_sdimage_p3.py
 
