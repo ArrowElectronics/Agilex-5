@@ -1,0 +1,549 @@
+{
+	"version": "0.600000",
+	"sensor": "Sony IMX477",
+	"bits_per_second": 10,
+	"pip": 2,
+	"baseline_temp": 6500,
+	"cfa_phase": "RGGB",
+	"gain_levels": 
+	{
+		"change_on_resolution": false,
+		"resolutions": 
+		{
+			"0": "default"
+		},
+		"res_gain_data": 
+		{
+			"default": 
+			{
+				"1.000000": 
+				{
+					"black_level": 
+					{
+						"blc_pedestal": 
+						[
+							256,
+							256,
+							256,
+							256
+						],
+						"blc_scalar": 
+						[
+							17481,
+							17481,
+							17481,
+							17481
+						],
+						"dark_noise": 1.555758102692683,
+						"combined_noise": 0.4259902887063865
+					}
+				},
+				"2.000000": 
+				{
+					"black_level": 
+					{
+						"blc_pedestal": 
+						[
+							257,
+							257,
+							257,
+							257
+						],
+						"blc_scalar": 
+						[
+							17554,
+							17554,
+							17554,
+							17554
+						],
+						"dark_noise": 2.2517517749976177,
+						"combined_noise": 0.8375433873260484
+					}
+				},
+				"4.000000": 
+				{
+					"black_level": 
+					{
+						"blc_pedestal": 
+						[
+							257,
+							257,
+							257,
+							257
+						],
+						"blc_scalar": 
+						[
+							17554,
+							17554,
+							17554,
+							17554
+						],
+						"dark_noise": 3.6190333429879495,
+						"combined_noise": 1.6641307351271935
+					}
+				},
+				"8.000000": 
+				{
+					"black_level": 
+					{
+						"blc_pedestal": 
+						[
+							256,
+							256,
+							256,
+							256
+						],
+						"blc_scalar": 
+						[
+							17481,
+							17481,
+							17481,
+							17481
+						],
+						"dark_noise": 6.874833294231495,
+						"combined_noise": 3.301969118649058
+					}
+				},
+				"15.990000": 
+				{
+					"black_level": 
+					{
+						"blc_pedestal": 
+						[
+							257,
+							257,
+							257,
+							257
+						],
+						"blc_scalar": 
+						[
+							17554,
+							17554,
+							17554,
+							17554
+						],
+						"dark_noise": 11.411982635477667,
+						"combined_noise": 6.4509459607056145
+					}
+				}
+			}
+		}
+	},
+	"colour_temps": 
+	{
+		"2700": 
+		{
+			"norm_wbs_ratio": 
+			[
+				0.107751,
+				0.467205,
+				0.425044
+			],
+			"rgb_scalars": 
+			[
+				2.26944401,
+				1.0,
+				2.40481453
+			],
+			"ccm_coeffs": 
+			[
+				[
+					2.02618827632,
+					-0.356546111065,
+					0.000801199544918,
+					0.0
+				],
+				[
+					-0.705288819665,
+					1.68835567806,
+					-0.743259128092,
+					0.0
+				],
+				[
+					-0.320899456653,
+					-0.331809566992,
+					1.74245792855,
+					0.0
+				]
+			],
+			"has_raw": true,
+			"frac_size": 8,
+			"x0_int": 176,
+			"x0_frac": 85,
+			"x1_int": 62,
+			"x1_frac": 248,
+			"ratio_count": 168,
+			"ratio_format": "RG_GB"
+		},
+		"4000": 
+		{
+			"norm_wbs_ratio": 
+			[
+				0.163943,
+				0.504416,
+				0.331641
+			],
+			"rgb_scalars": 
+			[
+				2.8994468,
+				1.0,
+				1.6442093
+			],
+			"ccm_coeffs": 
+			[
+				[
+					2.12892725363,
+					-0.292259216207,
+					-0.0213543622822,
+					0.0
+				],
+				[
+					-0.897411023409,
+					1.7133079662,
+					-0.559807334696,
+					0.0
+				],
+				[
+					-0.231516230224,
+					-0.421048749996,
+					1.58116169698,
+					0.0
+				]
+			],
+			"has_raw": true,
+			"frac_size": 8,
+			"x0_int": 211,
+			"x0_frac": 195,
+			"x1_int": 82,
+			"x1_frac": 107,
+			"ratio_count": 168,
+			"ratio_format": "RG_GB"
+		},
+		"5500": 
+		{
+			"norm_wbs_ratio": 
+			[
+				0.209077,
+				0.520525,
+				0.270398
+			],
+			"rgb_scalars": 
+			[
+				3.35618431,
+				1.0,
+				1.43528839
+			],
+			"ccm_coeffs": 
+			[
+				[
+					2.21418022795,
+					-0.255122211639,
+					-0.0336169346841,
+					0.0
+				],
+				[
+					-1.00859654644,
+					1.71302614436,
+					-0.512186514257,
+					0.0
+				],
+				[
+					-0.205583681509,
+					-0.45790393272,
+					1.54580344894,
+					0.0
+				]
+			],
+			"has_raw": true,
+			"frac_size": 8,
+			"x0_int": 245,
+			"x0_frac": 180,
+			"x1_int": 96,
+			"x1_frac": 73,
+			"ratio_count": 168,
+			"ratio_format": "RG_GB"
+		},
+		"6500": 
+		{
+			"norm_wbs_ratio": 
+			[
+				0.22838,
+				0.526764,
+				0.244856
+			],
+			"rgb_scalars": 
+			[
+				3.62602891,
+				1.0,
+				1.37286321
+			],
+			"ccm_coeffs": 
+			[
+				[
+					2.28106780295,
+					-0.237560821114,
+					-0.0384750137808,
+					0.0
+				],
+				[
+					-1.08991596883,
+					1.70602050142,
+					-0.498098948795,
+					0.0
+				],
+				[
+					-0.191151834121,
+					-0.468459680301,
+					1.53657396258,
+					0.0
+				]
+			],
+			"has_raw": true,
+			"frac_size": 8,
+			"x0_int": 264,
+			"x0_frac": 182,
+			"x1_int": 101,
+			"x1_frac": 158,
+			"ratio_count": 168,
+			"ratio_format": "RG_GB"
+		},
+		"9300": 
+		{
+			"norm_wbs_ratio": 
+			[
+				0.265177,
+				0.534173,
+				0.200651
+			],
+			"rgb_scalars": 
+			[
+				4.1334676,
+				1.0,
+				1.24834291
+			],
+			"ccm_coeffs": 
+			[
+				[
+					2.41294987542,
+					-0.210913461295,
+					-0.0487163261011,
+					0.0
+				],
+				[
+					-1.25060827854,
+					1.71595486991,
+					-0.47160735133,
+					0.0
+				],
+				[
+					-0.162341596878,
+					-0.50504140861,
+					1.52032367743,
+					0.0
+				]
+			],
+			"has_raw": true,
+			"frac_size": 8,
+			"x0_int": 307,
+			"x0_frac": 160,
+			"x1_int": 111,
+			"x1_frac": 119,
+			"ratio_count": 168,
+			"ratio_format": "RG_GB"
+		}
+	},
+	"name": "Settings",
+	"Camera_0": 
+	{
+		"analogueGain": 15.9,
+		"shutterSpeed": 19.995001
+	},
+	"TestPatternGenerator": 
+	{
+		"Pattern": 0,
+		"Color": 0
+	},
+	"VvpIspSourceSelect": 
+	{
+		"Input": 2
+	},
+	"VvpIspAutoExposure": 
+	{
+		"exposureAutoUpdate": true,
+		"meanBrightness": 0.4,
+		"enableRoi": false
+	},
+	"VvpIspProfileLoader": 
+	{
+		"awbOperationModeDropdown": 1,
+		"awbPresetDropdown": 0,
+		"tempScaleSlider": 8100
+	},
+	"DefectivePixelCorrection": 
+	{
+		"BypassDPC": false,
+		"SensitivityLevel": 0
+	},
+	"AdaptiveNoiseReduction": 
+	{
+		"BypassANR": false,
+		"StrengthANR": 1.0
+	},
+	"BlackLevelCorrection": 
+	{
+		"BypassBLC": false
+	},
+	"VignetteCorrection": 
+	{
+		"BypassVC": true,
+		"VcRadiusSlider": 0.0,
+		"VcLensStrengthSlider": 0.0
+	},
+	"WhiteBalanceCorrection": 
+	{
+		"BypassWBC": false
+	},
+	"Demosaic": 
+	{
+		"BypassDemosaic": false
+	},
+	"UnSharpMaskingFilter": 
+	{
+		"strengthSlider": 0.0
+	},
+	"ColorCorrectionMatrix": 
+	{
+		"tempEnableToggle": false
+	},
+	"WarpFull": 
+	{
+		"Bypass": false,
+		"LFR": true
+	},
+	"ToneMapping": 
+	{
+		"BypassTMO": false,
+		"TmoThreshold": 2520,
+		"TmoLevel": 48
+	},
+	"TmoRoi": 
+	{
+		"BypassTMO": false,
+		"TmoThreshold": 2520,
+		"TmoLevel": 48,
+		"roiEnable": false,
+		"roiOutside": false,
+		"roiX": 0.125,
+		"roiY": 0.2222,
+		"roiWidth": 0.75,
+		"roiHeight": 0.5555
+	},
+	"ThreeDLUT": 
+	{
+		"Enable3DLUT": false,
+		"LutName": ""
+	},
+	"LUT1D": 
+	{
+		"lut1dBypass": false,
+		"EnableLayer": true,
+		"CurveType": 0,
+		"FunctionType": 0,
+		"Gamma": 0.0,
+		"BlackLuminance": 10.0,
+		"WhiteLuminance": 10.0,
+		"EnableCustomLayer": false,
+		"roiX": 0.125,
+		"roiY": 0.2222,
+		"roiWidth": 0.75,
+		"roiHeight": 0.5555,
+		"roiHighlight": false
+	},
+	"Mixer": 
+	{
+		"logoPositionDropdown": 2,
+		"MixerLogoStaticAlphaSlider": 0.75
+	},
+	"HistogramStatsUpdates": 
+	{
+		"toggleAuto": true
+	},
+	"HistogramStatsConfig": 
+	{
+		"displayMode": 0
+	},
+	"ClipperRoiSettings": 
+	{
+		"roiWinTop": 0.0,
+		"roiWinLeft": 0.0,
+		"roiWinBottom": 0.0,
+		"roiWinRight": 0.0
+	},
+	"WarpMiscPanel": 
+	{
+		"meshScale": 1.0,
+		"ShowAlignment": true
+	},
+	"ModePanel": 
+	{
+		"Mode": 0
+	},
+	"MeshEditor": 
+	{
+		"CornerPoints": "0,0.000000,0.000000,1,1.000000,0.000000,2,0.000000,1.000000,3,1.000000,1.000000",
+		"ArbitraryPoints": "0,0.000000,0.000000,1,0.500000,0.000000,2,1.000000,0.000000,3,0.000000,0.500000,4,0.500000,0.500000,5,1.000000,0.500000,6,0.000000,1.000000,7,0.500000,1.000000,8,1.000000,1.000000"
+	},
+	"WarpFullFixed": 
+	{
+		"Rotation": 0.0,
+		"Zoom": 1.0,
+		"HOffset": 0,
+		"VOffset": 0,
+		"HMirror": false,
+		"VMirror": false,
+		"HKeystone": 0.0,
+		"VKeystone": 0.0,
+		"PreRadial": 0.0,
+		"Equirectangular": false,
+		"FisheyeRadius": 0.0,
+		"FisheyeFovV": 90.0,
+		"FisheyeFovH": 90.0
+	},
+	"WarpFullCorner": 
+	{
+		"PreRadial": 0.0
+	},
+	"GreyCardRoiSettings": 
+	{
+		"roiX": 0.125,
+		"roiY": 0.2222,
+		"roiWidth": 0.75,
+		"roiHeight": 0.5555
+	},
+	"GreyCardRoiHighlight": 
+	{
+		"roiHighlight": false
+	},
+	"AutoExposureRoiSettings": 
+	{
+		"roiX": 0.0,
+		"roiY": 0.0,
+		"roiWidth": 1.0,
+		"roiHeight": 1.0
+	},
+	"AutoExposureRoiHighlight": 
+	{
+		"roiHighlight": false
+	},
+	"HSRoiSettings": 
+	{
+		"roiX": 0.0,
+		"roiY": 0.0,
+		"roiWidth": 1.0,
+		"roiHeight": 1.0
+	},
+	"HSRoiHighlight": 
+	{
+		"roiHighlight": false
+	}
+}
